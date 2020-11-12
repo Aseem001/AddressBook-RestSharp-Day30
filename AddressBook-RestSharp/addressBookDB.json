@@ -1,0 +1,48 @@
+{
+  "contacts": [
+    {
+      "id": 1,
+      "firstname": "Rohit",
+      "lastname": "Sharma",
+      "phoneNo": "6754567887",
+      "address": "Wankhede",
+      "city": "Mumbai",
+      "state": "Maharashtra",
+      "zip": "345654",
+      "email":"rs@gmail.com"
+    },
+    {
+      "id": 2,
+      "firstname": "Virat",
+      "lastname": "Kohli",
+      "phoneNo": "6754567887",
+      "address": "Chinnaswamy",
+      "city": "Bangalore",
+      "state": "Karnataka",
+      "zip": "354676",
+      "email":"vs@gmail.com"
+    },
+    {
+      "id": 3,
+      "firstname": "MS",
+      "lastname": "Dhoni",
+      "phoneNo": "6754457887",
+      "address": "Chidambaram",
+      "city": "Chennai",
+      "state": "Tamil Nadu",
+      "zip": "998765",
+      "email":"msd@gmail.com"
+    },
+    {
+      "id": 4,
+      "firstname": "Saurav",
+      "lastname": "Ganguly",
+      "phoneNo": "5454567887",
+      "address": "Eden Gardens",
+      "city": "Kolkata",
+      "state": "West Bengal",
+      "zip": "115654",
+      "email":"sg@gmail.com"
+    }
+  ]
+}
