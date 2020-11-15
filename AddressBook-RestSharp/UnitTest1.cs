@@ -127,5 +127,23 @@ namespace AddressBook_RestSharp
             Assert.AreEqual("535678", contact.Zip);
             Console.WriteLine(response.Content);
         }
+
+        /// <summary>
+        /// UC 5 : Delete the contact details with given id
+        /// </summary>
+        [TestMethod]
+        public void OnCallingDeleteAPI_ReturnSuccessStatus()
+        {
+            //Arrange
+            //Initialize the request for PUT to add new employee
+            RestRequest request = new RestRequest("/contacts/7", Method.DELETE);
+
+            //Act
+            IRestResponse response = client.Execute(request);
+
+            //Assert
+            Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
+            Console.WriteLine(response.Content);
+        }
     }
 }
