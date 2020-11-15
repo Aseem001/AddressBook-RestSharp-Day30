@@ -94,5 +94,38 @@ namespace AddressBook_RestSharp
                 Console.WriteLine(response.Content);
             }
         }
+
+        /// <summary>
+        /// UC 24 : Update the phoneNo into the json file in json server
+        /// </summary>
+        [TestMethod]
+        public void OnCallingPutAPI_ReturnContactObject()
+        {
+            //Arrange
+            //Initialize the request for PUT to add new employee
+            RestRequest request = new RestRequest("/contacts/7", Method.PUT);
+            JsonObject jsonObj = new JsonObject();
+            jsonObj.Add("firstname", "Leo");
+            jsonObj.Add("lastname", "Messi");
+            jsonObj.Add("phoneNo", "7858070934");
+            jsonObj.Add("address", "FC Barcelona");
+            jsonObj.Add("city", "Barcelona");
+            jsonObj.Add("state", "Spain");
+            jsonObj.Add("zip", "535678");
+            jsonObj.Add("email", "leomessi@gmail.com");
+            //Added parameters to the request object such as the content-type and attaching the jsonObj with the request
+            request.AddParameter("application/json", jsonObj, ParameterType.RequestBody);
+
+            //Act
+            IRestResponse response = client.Execute(request);
+
+            //Assert
+            Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
+            Contact contact = JsonConvert.DeserializeObject<Contact>(response.Content);
+            Assert.AreEqual("Leo", contact.FirstName);
+            Assert.AreEqual("Messi", contact.LastName);
+            Assert.AreEqual("535678", contact.Zip);
+            Console.WriteLine(response.Content);
+        }
     }
 }
